@@ -1,3 +1,3 @@
 # ansible
 ansible playbooks
-This is using for traning 
+are using for traning 
