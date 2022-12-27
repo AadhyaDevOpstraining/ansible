@@ -1,0 +1,17 @@
+- hosts: all
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+    - name: Install apache for ubuntu
+      apt: name=httpd state=absent
+      when: ansible_os_family == "ubuntu"
+    - name: Install apache for redhat
+      yum: name=httpd state=absent
+      when: ansible_os_family == "RedHat"
+    - name: Install apache for debian
+      shell: apt-get -y install apache2
+      when: ansible_os_family == "Debian"
+    - name: Install apache for windows
+      shell: apt-get -y install apache2
+      when: ansible_os_family == "windows"
