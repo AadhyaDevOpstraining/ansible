@@ -1,3 +1,5 @@
+# https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_loops.html
+#refrence url Add in playbook
 ---
 - hosts: all
   become: true
