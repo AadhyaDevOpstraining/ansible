@@ -1,5 +1,5 @@
 ---
-- hosts: target
+- hosts: localhost
   become: true
   tasks:
   - name: Download Long Term Jenkins release
