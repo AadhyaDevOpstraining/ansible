@@ -1,0 +1,11 @@
+- hosts: all
+  user: ansible
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: run the uptime time on all hosts
+      raw: /usr/bin/uptime >> /home/ansible/uptime.log
+    - name: list the /var dir
+      raw: ls -ltra /var >> /home/ansible/fileoutput.log
+      run_once: true
+      delegate_to: localhost
