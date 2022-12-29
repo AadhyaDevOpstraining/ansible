@@ -1,0 +1,14 @@
+---
+  - hosts: localhost
+    gather_facts: false
+    become: yes
+    tasks:
+      - yum:
+         name: "{{item}}"
+         state: absent
+        loop:
+          - gettext-devel
+          - openssl-devel
+          - perl-CPAN
+          - perl-devel
+          - zlib-devel
