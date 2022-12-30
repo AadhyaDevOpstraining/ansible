@@ -1,0 +1,13 @@
+- hosts: all
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+    - name: First name
+      raw: echo "Aadhyamai " > /tmp/LOG
+      tags:
+        - firstname-1
+    - name: Second name
+      raw: echo "Aadhya " > /tmp/LOG
+      tags:
+        - secondname
