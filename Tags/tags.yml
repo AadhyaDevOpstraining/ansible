@@ -4,7 +4,7 @@
   connection: ssh
   tasks:
     - name: first name
-      raw: echo "Aadhyamai" > /tmp/Aadhya
+      raw: echo "Aadhya" > /tmp/Aadhya
       tags:
         - firstname
     - name: second name
