@@ -3,11 +3,16 @@
   become: yes
   connection: ssh
   tasks:
-    - name: First name
-      raw: echo "Aadhyamai " > /tmp/LOG
+    - name: first name
+      raw: echo "Aadhyamai " > /tmp/LOG1
       tags:
-        - firstname-1
-    - name: Second name
-      raw: echo "Aadhya " > /tmp/LOG
+        - firstname
+    - name: second name
+      raw: echo "Aadhya " > /tmp/LOG2
       tags:
         - secondname
+    - name: Thired name
+      raw: echo "Aadhya1 " > /tmp/LOG3
+      tags:
+        - three
+
