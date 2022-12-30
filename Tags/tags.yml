@@ -4,15 +4,15 @@
   connection: ssh
   tasks:
     - name: first name
-      raw: echo "Aadhyamai " > /tmp/LOG1
+      raw: echo "Aadhyamai" > /tmp/Aadhya
       tags:
         - firstname
     - name: second name
-      raw: echo "Aadhya " > /tmp/LOG2
+      raw: echo "Aadhya1" > /tmp/Aadhya1
       tags:
         - secondname
     - name: Thired name
-      raw: echo "Aadhya1 " > /tmp/LOG3
+      raw: echo "Aadhya2" > /tmp/Aadhya2
       tags:
         - three
 
