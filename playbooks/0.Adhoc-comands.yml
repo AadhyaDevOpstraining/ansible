@@ -1,0 +1,88 @@
+                   
+#ansible-doc -l                         ---> it will display the all the modules
+#ansible-doc <modulename>               ---> it will display the all the modules
+#ansible-doc yum 						      			---> To display the yum module info 
+#ansible all -m ping 						   			---> To ping all the server wich you are mention in/etc/ansible/hosts file 
+#ansible all -m ping -o 						  	---> To display the single line out put 
+#ansible all --list-hosts               --> it will display the host detail from invetory file 
+#ansible all -m shell -a 'uptime'				---> it will display the uptime of all servers
+#ansible all -m shell -a 'hostname'
+#ansible all -m shell -a 'time'
+#ansible all -m shell -a 'date' 
+
+#ansible all -a "ls -al /home/ansible" 	--> To list file of hoem dir  
+
+#ansible all -b -a 'cat /var/log/messages' --> To check log messages 
+#ansible all -b -a 'ls -l  /var/log'
+
+sudo   : -b
+ad-hoc : -a
+madule : -m
+================================================================
+To run anything with sudo, use -b
+	$ ansible all -b -a "cat /var/log/messages"
+	$ ansible localhost -b -a "cat /var/log/messages" 
+	
+Install/Remove a Package
+     $ ansible all  -b -m yum -a "pkg=httpd state=present"
+     $ ansible all  -b -m yum -a "pkg=httpd state=latest"
+     $ ansible all  -b -m yum -a "pkg=httpd state=absent"
+   		state=present will install it
+  		state=latest will update
+   		state=absent will remove it
+ Start/Stop a Service
+   $ ansible all  -b -m service -a "name=httpd state=started"
+   $ ansible all  -b -m service -a "name=httpd state=restarted"
+   $ ansible all  -b -m service -a "name=httpd state=stopped"
+
+Create/Delete a User account
+     $ ansible all -b -m user -a "name=test"
+     $ ansible all -b -m user -a "name=test state=absent"
+
+Add/Remove a Cron Job
+   ansible all -b -m cron -a "name='crontest' minute='25' hour='13' job='python test.py'"
+   ansible all -b -m cron -a "name='crontest' state='absent'"
+
+
+Gathering Facts (idempotence or convergence) 
+$ ansible all -m setup
+
+Save the output to facts dir
+$ ansible all -m setup --tree facts1
+
+Filter only the specific field
+$ ansible all -m setup -a 'filter=ipv4**'
+$ ansible all -m setup -a 'filter=ansible_domain'
+
+
+# ansible web --list-hosts    --> To list web group hosts servers
+# ansible all --list-hosts
+# ansible db --list-hosts  --> to display local hosts
+
+
+
+# ansible web -a "ls -l /tmp"     ---> to list /tem folder files
+# ansible web -a "touch /tmp/test" 
+
+# ansible all -a "mkdir /tmp/Aadhya"
+# ansible web -a "ls -l /tmp"
+# ansible web -a "rm -rf /tmp/test"  --> to remove a file 
+# ansible web -a "cat /etc/passwd"
+
+# ansible all -i /etc/ansible/hosts -m command -a "uptime"
+# ansible all -i /etc/ansible/hosts -b -m selinux -a "policy=targeted state=permissive"
+
+# ansible db -m copy -a "src=/source/file/path dest=/dest/location"  --> copy file from control node to managed node
+# ansible all -m debug -a "msg='This is debug module'"  -> This is debug mode it will run only on local hosts
+# ansible all -m debug -a "var=inventory_hostname"       -> it will list hostnames or ip address
+# ansible all -m debug -a "msg={{inventory_hostname}}"   -> it will diplay hosts details
+
+# ansible-playbook playbook.yml --limit web              -->it will limit the only we server group
+# ansible-playbook playbook.yml --limit xyz.example.com         --> to limit particular host server
+# ansible-playbook playbook.yml --list-hosts  					--> to list the hosts server 
+
+# ansible-playbook playbook.yaml -i hosts  --> custom host file we can run 
+
+# ansible-playbook playbookname
+# ansible-playbook --help
+# ansible-playbook playbook.yaml --syntax-check -->it will check sysntax of playbook
