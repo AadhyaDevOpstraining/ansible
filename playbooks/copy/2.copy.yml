@@ -1,0 +1,24 @@
+#copying file from remote server to remote server 
+
+- hosts: ServerB
+  tasks:
+    - name: Transfer file from ServerA to ServerB
+      synchronize:
+        src: /path/on/server_a
+        dest: /path/on/server_b
+      delegate_to: ServerA
+...
+
+or
+
+---
+ - hosts: app
+   tasks:
+     - name: Fetch the file from the mwiapp01 to master
+       run_once: yes
+       fetch: src=/tmp/app01-to-app02.jar dest=buffer/ flat=yes
+
+     - name: Copy the file from master to mwiapp02
+       copy: src=buffer/app01-to-app02.jar dest=/tmp/
+       when: "{{ ansible_hostname == 'mwiapp02' }}"
+...
