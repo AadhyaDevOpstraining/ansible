@@ -1,0 +1,11 @@
+- hosts: all
+  user: ansible
+  become: true
+  connection: ssh
+  tasks:
+    - name: Install apache for ubuntu
+      apt: pkg=nginx state=absent update_cache=true
+      when: ansible_os_family == "Debian"  #ubuntuserver will work
+    - name: Install apache for redhat
+      yum: name=httpd state=present
+      when: ansible_os_family == "RedHat"
