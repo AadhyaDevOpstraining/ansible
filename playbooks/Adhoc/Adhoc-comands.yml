@@ -1,18 +1,18 @@
                    
-#ansible-doc -l                         ---> it will display the all the modules
-#ansible-doc <modulename>               ---> it will display the all the modules
-#ansible-doc yum 						      			---> To display the yum module info 
-#ansible all -m ping 						   			---> To ping all the server wich you are mention in/etc/ansible/hosts file 
-#ansible all -m ping -o 						  	---> To display the single line out put 
-#ansible all --list-hosts               --> it will display the host detail from invetory file 
-#ansible all -m shell -a 'uptime'				---> it will display the uptime of all servers
+#ansible-doc -l                                ---> it will display the all the modules
+#ansible-doc <modulename>                      ---> it will display the all the modules
+#ansible-doc yum 			       ---> To display the yum module info 
+#ansible all -m ping 			       ---> To ping all the server wich you are mention in/etc/ansible/hosts file 
+#ansible all -m ping -o 		       ---> To display the single line out put 
+#ansible all --list-hosts                      ---> it will display the host detail from invetory file 
+#ansible all -m shell -a 'uptime'	       ---> it will display the uptime of all servers
 #ansible all -m shell -a 'hostname'
 #ansible all -m shell -a 'time'
 #ansible all -m shell -a 'date' 
 
-#ansible all -a "ls -al /home/ansible" 	--> To list file of hoem dir  
+#ansible all -a "ls -al /home/ansible" 	      ---> To list file of hoem dir  
 
-#ansible all -b -a 'cat /var/log/messages' --> To check log messages 
+#ansible all -b -a 'cat /var/log/messages'    ---> To check log messages 
 #ansible all -b -a 'ls -l  /var/log'
 
 sudo   : -b
