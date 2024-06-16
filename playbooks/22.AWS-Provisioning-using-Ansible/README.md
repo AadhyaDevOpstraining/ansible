@@ -1,0 +1,2 @@
+https://docs.ansible.com/ansible/latest/collections/amazon/aws/index.html
+https://docs.ansible.com/ansible/latest/collections/amazon/aws/ec2_instance_module.html#ansible-collections-amazon-aws-ec2-instance-module
