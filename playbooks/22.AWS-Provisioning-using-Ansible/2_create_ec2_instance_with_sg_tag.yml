@@ -5,18 +5,18 @@
    gather_facts: false
    tasks:
    - name: Creating ec2 instance
-     ec2:
+     amazon.aws.ec2_instance:
       instance_type: t1.micro
-      image: ami-011b3ccf1bd6db744
+      image: ami-08a0d1e16fc3f61ea
       count: 2
-      key_name: ansible_key
+      key_name: ansible_key (pem.key name we need to add)
       region: us-east-1
       wait: yes 
       #group: DoWithPython
-      #group_id: sg-00fe30710bcfff987
+      #group_id: sg-0afb1127dfd3da9b4
       #group_id: [ 'sg-00fe30710bcfff987','sg-0010cd50d200cfa69']
       group_id:
-        - sg-00fe30710bcfff987
-        - sg-0010cd50d200cfa69
+        - sg-0afb1127dfd3da9b4
+        #- sg-0010cd50d200cfa69
       instance_tags:
         Env: test

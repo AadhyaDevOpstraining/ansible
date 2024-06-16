@@ -5,7 +5,7 @@
    gather_facts: fasle
    tasks:
    - name: starting ec2 instance
-     ec2:
+     amazon.aws.ec2_instance:
       instance_ids: i-006dafad18394c3cb
       region: us-east-1
       state: running

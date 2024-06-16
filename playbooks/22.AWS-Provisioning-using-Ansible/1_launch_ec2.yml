@@ -4,8 +4,8 @@
    gather_facts: false
    tasks:
    - name: Launching ec2 instance with ec2 module 
-     ec2:
+     amazon.aws.ec2_instance:
       instance_type: t2.micro
-      image: ami-011b3ccf1bd6db744
-      key_name: ansible_key
+      image: ami-08a0d1e16fc3f61ea
+      key_name: ansible_key (pem.key name we need to add)
       region: us-east-1
