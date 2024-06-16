@@ -1,0 +1,1 @@
+https://docs.ansible.com/ansible/latest/vault_guide/index.html
