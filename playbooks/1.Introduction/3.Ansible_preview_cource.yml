@@ -1,0 +1,41 @@
+Pre-requisites for learning Ansible (Ansible with Playbooks):
+Knowledge on any flavor of Unix-Like based Systems because Ansible is an
+Open source software available for Linux Based systems such as Debian,Redhat, Ubuntu, Centos and more…
+Knowledge on Any Cloud or VMware.
+Programming is required to develop own modules.
+
+Course Content Part-I:
+Introducing Ansible
+Overview of Ansible Architecture
+Ansible Components
+Describing Ansible Inventory
+Deploying Ansible
+Installing Ansible
+Managing Ansible Configuration files
+Working with Ad-hoc Commands
+Dynamic inventory with different scripting Languages
+Working with raw modules
+
+Course Content Part-2:
+Implementing Ansible Playbooks
+Introduction to Playbooks
+Structure of Playbooks
+Introduction to YAML Scripting
+Simple Playbooks
+Playbooks by using different modules
+Different Types of Variables
+Handling Errors
+Usage of Tags
+Loops for Playbooks
+Working with Handlers
+Ansible Galaxy for roles
+Working with Vault to supply crypted password for Playbooks
+Jinja2 Templates Concepts to use in Playbooks
+
+Course Content Part-3:
+Building own modules
+Steps to implement own modules
+How to use Python and shell scripting to Build own modules
+Implementing Ansible Playbooks for AWS Cloud
+Setup Environment for Ansible to work with AWS Cloud
+Ansible Playbooks to easily provision and manage your Amazon Cloud infrastructure.

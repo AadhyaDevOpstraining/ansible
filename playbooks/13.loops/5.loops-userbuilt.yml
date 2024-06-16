@@ -1,0 +1,14 @@
+# https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_loops.html
+#refrence url Add in playbook
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Add several users
+    ansible.builtin.user:
+      name: "{{ item }}"
+      state: present
+      groups: "wheel"
+    loop:
+     - testuser1
+     - testuser2
