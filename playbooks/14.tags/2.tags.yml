@@ -1,0 +1,18 @@
+- hosts: all
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+    - name: first name
+      raw: echo "Aadhya" > /tmp/Aadhya
+      tags:
+        - firstname
+    - name: second name
+      raw: echo "Aadhya1" > /tmp/Aadhya1
+      tags:
+        - secondname
+    - name: Thired name
+      raw: echo "Aadhya2" > /tmp/Aadhya2
+      tags:
+        - three
+

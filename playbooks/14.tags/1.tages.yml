@@ -1,0 +1,18 @@
+- hosts: all
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+    - name: first name
+      raw: echo "Aadhyamai " > /tmp/LOG
+      tags:
+        - firstname
+    - name: second name
+      raw: echo "Aadhya " > /tmp/LOG
+      tags:
+        - secondname
+
+
+#$ ansible-playbook playbook.yml --tags "firstname"
+#$ ansible-playbook playbook.yml --tags "secondname"
+#$ ansible-playbook playbook.yml --skip-tags "secondname"  --> To skip sceond tag use this command  
