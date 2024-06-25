@@ -16,7 +16,7 @@ yum install ansible -y
 5) Verify the version
 ansible --version
 
----------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
 Create Normal User(ansible) in Machine 1 (Where Ansible is installing) This is important as we will use this user to perform all ansible related tasks.
  
 #adduser ansible 
