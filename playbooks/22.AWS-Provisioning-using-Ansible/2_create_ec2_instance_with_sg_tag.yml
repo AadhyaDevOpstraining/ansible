@@ -1,13 +1,26 @@
+
+
 ---
- - name: This play is used to create ec2 instance/s using SGs ang Tags
-   hosts: localhost
-   connection: local
-   gather_facts: false
-   tasks:
-   - name: Creating ec2 instance
+- hosts: localhost
+  become: true
+  tasks:
+   - name: pip install
+     pip:
+      name: boto3
+      vars:
+      ansible_python_interpreter: /usr/bin/python3
+   - name: create a simple E2-server
      amazon.aws.ec2_instance:
-      instance_type: t1.micro
-      image: ami-08a0d1e16fc3f61ea
+       name: aadhya
+       count: 2
+       key_name: XXXXX
+       instance_type: t2.micro
+       security_group: default
+       image_id: ami-17a25d1
+       tags:
+        Environment: Testing---
+
+---------------------------------------------------------
       count: 2
       key_name: ansible_key (pem.key name we need to add)
       region: us-east-1

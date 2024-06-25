@@ -4,15 +4,22 @@
   tasks:
    - name: pip install
      pip:
-      name: boto3
-      vars:
-      ansible_python_interpreter: /usr/bin/python3
+      name: ["boto3", "botocore"]
+     vars:
+       ansible_python_interpreter: /usr/bin/python3
    - name: create a simple E2-server
      amazon.aws.ec2_instance:
-       name: aadhya
-       key_name: XXXXX
-       instance_type: t2.micro
+       name: servername
+       key_name: keypairename
+       instance_type: t2.micro#
        security_group: default
-       image_id: ami-17a25d1
+       image_id: ami-01b799c439
+       region: us-east-1
+       vpc_subnet_id: subnet-01d44
        tags:
         Environment: Testing
+
+# create one aws user with admin access 
+# provide user credicial to user by using aws configure
+# aws configure as root user
+ 
